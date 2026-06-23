@@ -439,48 +439,33 @@
     .stat-label { font-size: 0.85rem; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 0.08em; margin-top: 8px; }
 
     /* ================================ */
-    /* RECENT WORK GALLERY              */
+    /* RECENT WORK GALLERY (MASONRY)   */
     /* ================================ */
     .gallery-section {
       padding: var(--section-padding);
       background: var(--bg-primary);
     }
     .gallery-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
+      column-count: 2;
+      column-gap: 16px;
       max-width: 960px;
       margin: 0 auto;
     }
     .gallery-item {
-      aspect-ratio: 3 / 2;
-      overflow: hidden;
+      break-inside: avoid;
+      margin-bottom: 16px;
       border-radius: var(--radius-md);
-      position: relative;
+      overflow: hidden;
+      background: #111;
     }
     .gallery-item img {
       width: 100%;
-      height: 100%;
-      object-fit: cover;
+      height: auto;
       display: block;
-      transition: transform 0.4s ease;
-    }
-    .gallery-item:hover img { transform: scale(1.04); }
-    .gallery-item::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to top, rgba(0,0,0,0.35) 0%, transparent 50%);
-      pointer-events: none;
+      object-fit: contain;
     }
     @media (max-width: 640px) {
-      .gallery-grid {
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: auto;
-      }
-      .gallery-item {
-        aspect-ratio: 3 / 2;
-      }
+      .gallery-grid { column-count: 2; }
     }
 
     /* ================================ */
