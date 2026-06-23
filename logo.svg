@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60" width="200" height="60">
+  <rect width="200" height="60" fill="#000" rx="4"/>
+  <text x="16" y="42" font-family="sans-serif" font-weight="900" font-size="26" fill="#FF5D00" letter-spacing="1">GUTTER</text>
+  <text x="108" y="42" font-family="sans-serif" font-weight="700" font-size="26" fill="#FFFFFF" letter-spacing="1">CRAFTSMAN</text>
+</svg>
