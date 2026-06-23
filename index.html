@@ -439,6 +439,59 @@
     .stat-label { font-size: 0.85rem; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 0.08em; margin-top: 8px; }
 
     /* ================================ */
+    /* RECENT WORK GALLERY              */
+    /* ================================ */
+    .gallery-section {
+      padding: var(--section-padding);
+      background: var(--bg-primary);
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: 280px 200px;
+      gap: 16px;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    .gallery-item {
+      overflow: hidden;
+      border-radius: var(--radius-md);
+      position: relative;
+    }
+    .gallery-item:first-child {
+      grid-column: 1 / 3;
+      grid-row: 1;
+    }
+    .gallery-item:nth-child(2) { grid-column: 3; grid-row: 1; }
+    .gallery-item:nth-child(3) { grid-column: 1; grid-row: 2; }
+    .gallery-item:nth-child(4) { grid-column: 2 / 4; grid-row: 2; }
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+    .gallery-item:hover img { transform: scale(1.04); }
+    .gallery-item::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.4) 0%, transparent 50%);
+      pointer-events: none;
+    }
+    @media (max-width: 640px) {
+      .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 220px 160px 160px;
+      }
+      .gallery-item:first-child { grid-column: 1 / 3; grid-row: 1; }
+      .gallery-item:nth-child(2) { grid-column: 1; grid-row: 2; }
+      .gallery-item:nth-child(3) { grid-column: 2; grid-row: 2; }
+      .gallery-item:nth-child(4) { grid-column: 1 / 3; grid-row: 3; }
+    }
+
+    /* ================================ */
     /* REVIEWS                          */
     /* ================================ */
     .reviews { padding: var(--section-padding); background: var(--bg-secondary); }
@@ -860,7 +913,7 @@
       </div>
       <div class="about-image reveal">
         <figure class="about-graphic">
-          <img src="about-photo.jpg" alt="Gutter Craftsman crew installing seamless gutters on a Western Wisconsin home" loading="lazy" width="450" height="450" />
+          <img src="assets/job-barn-home.jpg" alt="Gutter Craftsman crew installing seamless gutters on a Western Wisconsin home" loading="lazy" width="450" height="450" />
           <figcaption class="about-photo-caption">
             <span class="about-caption-name">Gutter Craftsman</span>
             <span class="about-caption-title">Eau Claire & Western Wisconsin</span>
@@ -888,6 +941,29 @@
       <div class="stat-item">
         <div class="stat-text" data-count="20" data-suffix="+">0</div>
         <div class="stat-label">Years Experience</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RECENT WORK -->
+  <section class="gallery-section" id="work" aria-labelledby="gallery-heading">
+    <header class="section-header">
+      <p class="section-label">Portfolio</p>
+      <h2 class="section-title" id="gallery-heading">Recent Work</h2>
+      <p class="section-sub">Real gutter installations across Western Wisconsin.</p>
+    </header>
+    <div class="gallery-grid">
+      <div class="gallery-item reveal">
+        <img src="assets/job-large-home.jpg" alt="Seamless gutter installation on large residential home" loading="lazy" />
+      </div>
+      <div class="gallery-item reveal">
+        <img src="assets/job-barn-home.jpg" alt="Gutter installation on modern barn-style home" loading="lazy" />
+      </div>
+      <div class="gallery-item reveal">
+        <img src="assets/job-conveyor-install.jpg" alt="Professional gutter installation in progress" loading="lazy" />
+      </div>
+      <div class="gallery-item reveal">
+        <img src="assets/job-white-garage.jpg" alt="White garage gutter and downspout installation" loading="lazy" />
       </div>
     </div>
   </section>
